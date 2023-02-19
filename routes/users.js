@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+// connection
 mongoose.connect("mongodb://localhost/gmailapp");
 const plm = require("passport-local-mongoose");
 const userSchema = mongoose.Schema({
