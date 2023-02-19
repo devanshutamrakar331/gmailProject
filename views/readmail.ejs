@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=user.name%> | Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/profile.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="user-details">
+        <h1>Hey <span><%=user.name%> ,</span></h1>
+        <a href="/logout">
+          <button class="btn-logout">Logout</button>
+        </a>
+        <button class="btn-create">Create new mail +</button>
+        <button class="btn-sent" onclick="location.href='/profile'">
+          Check Inbox
+        </button>
+      </div>
+      <div class="mails">
+        <div class="mail" style="height: fit-Content">
+          <h3>From : <%=mail.userId.email%></h3>
+          <p><%=mail.mailtext%></p>
+          <div class="mail-links">
+            <a href="/delete/mail/<%=mail._id%>">
+              <i class="ri-delete-bin-7-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="compose">
+        <div class="compose-head">
+          <h3>New Message</h3>
+          <i class="ri-close-line" onclick="location.href='/profile'"></i>
+        </div>
+        <form action="/compose" method="post">
+          <input type="text" placeholder="To Recipient" name="recieveMail" />
+          <textarea name="mailtext" placeholder="Write your mail"> </textarea>
+          <button class="btn-send">Send</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      document
+        .querySelector(".btn-create")
+        .addEventListener("click", function (dets) {
+          document.querySelector(".compose").style.display = "block";
+          console.log("hello");
+        });
+    </script>
+  </body>
+</html>

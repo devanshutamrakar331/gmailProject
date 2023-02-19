@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gmail | Sign up</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="signup">
+        <form action="/register" method="post" autocomplete="off">
+          <h1>Sign up</h1>
+          <a href="/login">Already have an account ?</a>
+
+          <div class="input-field">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Name" />
+          </div>
+          <div class="input-field">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Username" />
+          </div>
+          <div class="input-field">
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Email" required="" />
+          </div>
+          <div class="input-field">
+            <label for="mobile">Mobile</label>
+            <input type="text" name="mobile" placeholder="Mobile" />
+          </div>
+          <div class="input-field">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" />
+          </div>
+
+          <button>Sign up</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
